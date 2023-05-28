@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <colourgrey-MRkroman>
+                <colourgrey-MRkroman-inputfield id="cgmrkromaninp" contenteditable="true" data-placeholder="변환할 글을 입력하세요" onload="placeholderfunction1(this)"></colourgrey-MRkroman-inputfield>
+                <colourgrey-MRkroman-translatedoutput id="cgmrkromanoutp"></colourgrey-MRkroman-translatedoutput>
+            </colourgrey-MRkroman>
+        </div>
+    </div>
+    <script src="./kroman.js"></script>
+    <script>
+        var kroman1 = new kroman();
+        var babo1 = '';
+        var cgmrkromaninp = document.getElementById("cgmrkromaninp");
+        var cgmrkromanoutp = document.getElementById("cgmrkromanoutp");
+        cgmrkromaninp.onkeyup = function () {
+            babo1 = kroman1.kroman2(` `+cgmrkromaninp.innerHTML);
+            console.log(babo1);
+            cgmrkromanoutp.innerHTML = babo1;
+        }
+
+        function placeholderfunction1(target1) {
+            var target111 = target1.innerHTML;
+            var target2;
+            if (target111 = "") {
+                target2 = target1.getAttribute("data-placeholder");
+                target1.innerHTML = target2;
+            }
+        }
+        
+        console.log(babo1);
+    </script>
+</body>
+</html>

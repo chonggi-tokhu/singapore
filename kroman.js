@@ -85,11 +85,21 @@ kroman.prototype = {
     },
   },
   kroman2(text) {
+    var thislastisn = false;
     var kromanData = this.kromanData;
     var retval = ``;
     var lastCharIsHangul = false;
     for (var i = 0; i < text.length; i++) {
       var charCode = text.charCodeAt(i);
+      var charCode2 = text[i].charCodeAt(0);
+      var charCode3 = Math.floor((charCode2 - kromanData.ga) % kromanData.headi);
+      if ((Math.floor(charCode3 % kromanData.bodyi)) == "n") {
+        thislastisn = true;
+      }
+      if (Math.floor((charCode - kromanData.ga) / kromanData.headi) == "g" && thislastisn == true) {
+        retval[i] = `'g`;
+        thislastisn = false;
+      }
       if (charCode >= kromanData.ga && charCode <= kromanData.hih) {
         var head = Math.floor((charCode - kromanData.ga) / kromanData.headi);
         var headl = Math.floor((charCode - kromanData.ga) % kromanData.headi);

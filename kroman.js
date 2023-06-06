@@ -1,8 +1,9 @@
 /* here is source of this code. `https://github.com/victorteokw/kroman-js/` */
-var thislastisn;
+
 function kroman() {
   `use strict`;
 }
+var thislastisn;
 kroman.prototype = {
   kromanData: {
     ga: 0xac00,

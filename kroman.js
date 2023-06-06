@@ -1,4 +1,5 @@
 /* here is source of this code. `https://github.com/victorteokw/kroman-js/` */
+var thislastisn;
 function kroman() {
   `use strict`;
 }
@@ -85,7 +86,7 @@ kroman.prototype = {
     },
   },
   kroman2(text) {
-    var thislastisn = false;
+    thislastisn = false;
     var kromanData = this.kromanData;
     var retval = ``;
     var lastCharIsHangul = false;

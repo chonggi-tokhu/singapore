@@ -103,6 +103,10 @@ kroman.prototype = {
         var headl = Math.floor((charCode - kromanData.ga) % kromanData.headi);
         var body = Math.floor(headl / kromanData.bodyi);
         var tail = Math.floor(headl % kromanData.bodyi);
+
+        if (lastCharIsHangul) {
+          retval += ``;
+        }
         if (kromanData.talij[tail] == "n") {
           thislastisn = true;
           console.log("hellosss");
@@ -110,9 +114,6 @@ kroman.prototype = {
         if (kromanData.headj[head] == "g" && thislastisn == true) {
           retval[i] = `'g`;
           thislastisn = false;
-        }
-        if (lastCharIsHangul) {
-          retval += ``;
         }
         retval +=
           kromanData.headj[head] +

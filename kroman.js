@@ -106,7 +106,6 @@ kroman.prototype = {
         if (lastCharIsHangul) {
           retval += ``;
         }
-        if (tail) {
           console.log(this.kromanData.tailj[tail]);
           if (this.kromanData.tailj[tail] == "n") {
              thislastisn = true;
@@ -117,7 +116,6 @@ kroman.prototype = {
             console.log("kokoko");
             thislastisn = false;
           }
-        }
 
         retval +=
           kromanData.headj[head] +

@@ -114,6 +114,7 @@ kroman.prototype = {
           }
           if (this.kromanData.headj[head] == "g" && thislastisn == true) {
             retval[i] = `'g`;
+            console.log("kokoko");
             thislastisn = false;
           }
         }

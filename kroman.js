@@ -107,11 +107,11 @@ kroman.prototype = {
         if (lastCharIsHangul) {
           retval += ``;
         }
-        if (kroman.prototype.kromanData.talij[tail] == "n") {
+        if (this.kromanData.talij[tail] == "n") {
           thislastisn = true;
           console.log("hellosss");
         }
-        if (kroman.prototype.kromanData.headj[head] == "g" && thislastisn == true) {
+        if (this.kromanData.headj[head] == "g" && thislastisn == true) {
           retval[i] = `'g`;
           thislastisn = false;
         }

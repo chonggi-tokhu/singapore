@@ -87,7 +87,6 @@ kroman.prototype = {
     },
   },
   kroman2(text) {
-    thislastisn = false;
     var kromanData = this.kromanData;
     var retval = ``;
     var lastCharIsHangul = false;

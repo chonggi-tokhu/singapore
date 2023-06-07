@@ -109,7 +109,7 @@ kroman.prototype = {
         }
         if (tail) {
           console.log(this.kromanData.tailj[tail]);
-          if (this.kromanData.talij[tail] == "n") {
+          if (this.kromanData.tailj[tail] == "n") {
              thislastisn = true;
             console.log("hellosss");
           }

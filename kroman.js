@@ -95,6 +95,7 @@ kroman.prototype = {
       var charCode = text.charCodeAt(i);
       var charCode2 = text[i].charCodeAt(0);
       var charCode3 = Math.floor((charCode2 - kromanData.ga) % kromanData.headi);
+      console.log((Math.floor(headl % kromanData.bodyi)));
       if ((Math.floor(headl % kromanData.bodyi)) == "n") {
         thislastisn = true;
         console.log("hellosss");

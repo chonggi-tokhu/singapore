@@ -97,19 +97,20 @@ kroman.prototype = {
       var charCode3 = Math.floor((charCode2 - kromanData.ga) % kromanData.headi);
       console.log((Math.floor(headl % kromanData.bodyi)));
       var headl = Math.floor((charCode - kromanData.ga) % kromanData.headi);
-      if (kromanData.talij[(Math.floor(headl % kromanData.bodyi))] == "n") {
-        thislastisn = true;
-        console.log("hellosss");
-      }
-      if (kromanData.headj[Math.floor((charCode - kromanData.ga) / kromanData.headi)] == "g" && thislastisn == true) {
-        retval[i] = `'g`;
-        thislastisn = false;
-      }
+
       if (charCode >= kromanData.ga && charCode <= kromanData.hih) {
         var head = Math.floor((charCode - kromanData.ga) / kromanData.headi);
         var headl = Math.floor((charCode - kromanData.ga) % kromanData.headi);
         var body = Math.floor(headl / kromanData.bodyi);
         var tail = Math.floor(headl % kromanData.bodyi);
+        if (kromanData.talij[tail] == "n") {
+          thislastisn = true;
+          console.log("hellosss");
+        }
+        if (kromanData.headj[head] == "g" && thislastisn == true) {
+          retval[i] = `'g`;
+          thislastisn = false;
+        }
         if (lastCharIsHangul) {
           retval += ``;
         }

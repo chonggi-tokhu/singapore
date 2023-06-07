@@ -107,16 +107,16 @@ kroman.prototype = {
         if (lastCharIsHangul) {
           retval += ``;
         }
-        if(tail) {
-                console.log(this.kromanData.talij[tail]);
-        if (this.kromanData.talij[tail] == "n") {
-          thislastisn = true;
-          console.log("hellosss");
-        }
-        if (this.kromanData.headj[head] == "g" && thislastisn == true) {
-          retval[i] = `'g`;
-          thislastisn = false;
-        }
+        if (tail) {
+          console.log(this.kromanData.tailj[tail]);
+          if (this.kromanData.talij[tail] == "n") {
+             thislastisn = true;
+            console.log("hellosss");
+          }
+          if (this.kromanData.headj[head] == "g" && thislastisn == true) {
+            retval[i] = `'g`;
+            thislastisn = false;
+          }
         }
 
         retval +=

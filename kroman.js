@@ -97,11 +97,11 @@ kroman.prototype = {
       var charCode3 = Math.floor((charCode2 - kromanData.ga) % kromanData.headi);
       console.log((Math.floor(headl % kromanData.bodyi)));
       var headl = Math.floor((charCode - kromanData.ga) % kromanData.headi);
-      if ((Math.floor(headl % kromanData.bodyi)) == "n") {
+      if (kromanData.talij[(Math.floor(headl % kromanData.bodyi))] == "n") {
         thislastisn = true;
         console.log("hellosss");
       }
-      if (Math.floor((charCode - kromanData.ga) / kromanData.headi) == "g" && thislastisn == true) {
+      if (kromanData.headj[Math.floor((charCode - kromanData.ga) / kromanData.headi)] == "g" && thislastisn == true) {
         retval[i] = `'g`;
         thislastisn = false;
       }

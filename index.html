@@ -5,12 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로마자 변환(매큔-라이샤워)</title>
+    <style>
+        placeholder {
+            color:#8f8f92;
+            border:1px solid #8f8f92;
+        }
+    </style>
 </head>
 <body>
     <div>
         <div>
             <colourgrey-MRkroman>
-                <colourgrey-MRkroman-inputfield id="cgmrkromaninp" contenteditable="true" data-placeholder="변환할 글을 입력하세요" onload="placeholderfunction1(this)"></colourgrey-MRkroman-inputfield>
+                <placeholder id="kromaninppl">변환할 글을 입력하세요</placeholder>
+                <colourgrey-MRkroman-inputfield id="cgmrkromaninp" contenteditable="true" data-placeholder="변환할 글을 입력하세요" style="border:1px solid #222;" onload="placeholderfunction1(this)"></colourgrey-MRkroman-inputfield>
                 <colourgrey-MRkroman-translatedoutput id="cgmrkromanoutp"></colourgrey-MRkroman-translatedoutput>
             </colourgrey-MRkroman>
         </div>
@@ -25,6 +32,15 @@
             babo1 = kroman1.kroman2(` `+cgmrkromaninp.innerHTML);
             console.log(babo1);
             cgmrkromanoutp.innerHTML = babo1;
+        }
+        window.onkeyup = function(e) {
+            if (cgmrkromaninp.innerHTML == "") {
+                document.getElementById("kromaninppl").innerHTML = "변환할 글을 입력하세요";
+                cgmrkromaninp.style.height = 0;
+            } else {
+                document.getElementById("kromaninppl").innerHTML = "";
+                cgmrkromaninp.style.height = 30px;
+            }
         }
 
         window.onload = function () {
